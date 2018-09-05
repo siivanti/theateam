@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CMSC 495 Final Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+  <script src="/javascripts/scripts.js"></script>
+</head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+        
+        var options = {   
+            
+            titleTextStyle: {color: '#2c4f6d', fontSize: 22, bold: true},
+            colors:['#3b6890','#4476a3', '#4b82b3', '#528cc1','#5896ce', '#6fa3d8','#8fb4de','#a6c1e3','#bbcfe9','#cedbee'],
+            chartArea:{left:50,top:50,width:'90%',height:'80%'},
+            backgroundColor: '#e5e5e5',
+            title: 'Relative Distribution of Active Ports',
+            pieHole: 0.4,
+            pieSliceTextStyle: {
+            color: 'white'
+          },
+          
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-2 sidenav">     
+      <ul class="nav nav-pills nav-stacked nav-tabs leftsidebar">
+        <li class="nav-item active"><a href="#section1">Import</a></li>
+        <li class="nav-item "><a href="#section2">Export</a></li>
+        <li class="nav-item "><a href="#section3">About</a></li>
+        <li class="nav-item "><a href="#section3">Help</a></li>       
+      </ul><br>
+      <div class="container-fluid center-block imageContainer">    
+        <img class="center-block" src="images/Nsight-Logo.png"/>
+      </div>      
+    </div>
+
+    <div class="col-sm-10 mainContent setHeight">
+        <h1 class="text-center">Nsight</h1>
+      <h4 class="text-center"><medium>Network Traffic Monitoring & Analysis</medium></h4>
+      <hr>
+      <ul class="list-inline text-center sublist">
+          <li class="list-inline-item"><h5><span id="utcTime"></span></h5></li>
+          <li class="list-inline-item"><h5>Public IPv4: <span id="publicIP"></span></h5></li>
+          <li class="list-inline-item"><h5>Private IPV4: <span id="privateIP"></span></h5></li>
+       </ul>
+      <div  id="donutchart"></div>      
+      <br>  
+        <div class="container-fluid col-sm-6">
+            <h3 class="text-center radiotitle">SELECT A VISUALIZATION</h3><br>
+            <div class="radiobox">
+              <div class="radio ">
+                  <label><input class="radioitem" type="radio" name="optradio" checked> Relative Distribution of Active Ports</label>          
+              </div>
+                <div class="radio">
+                  <label><input class="radioitem" type="radio" name="optradio" checked> IP-based Activity Tracker</label>          
+              </div>
+                <div class="radio">
+                  <label><input class="radioitem" type="radio" name="optradio" checked> IP-to-Port Correlation</label>          
+              </div>
+            </div>
+        </div>               
+
+      <br><br>  
+        
+      </div>
+     
+        <div class="container col-sm-10 footer">
+           <ul class="list-inline text-center">
+                <li class="list-inline-item"><h4>Entry Number</h4></li>
+                <li class="list-inline-item"><h4>Request Timestamp</h4></li>
+               <li class="list-inline-item"><h4>Request IP:Port</h4><li>
+                    <li class="list-inline-item"><h4>Response IP:Port</h4></li>
+                <li class="list-inline-item"><h4>Response Hostname</h4></li>
+            
+            </ul>
+        </div>
+                  
+    </div>
+  
+</div>
+
+
+
+</body>
+</html>
