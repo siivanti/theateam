@@ -42,6 +42,14 @@
         chart.draw(data, options);
       }
     </script>
+	<script>
+		function popup(url, tag, write){
+			popupWindow=window.open(url, tag, 'height=350,width=350,left=100,top=100,resizable=yes');
+			popupWindow.document.title = "Nsight";
+			popupWindow.document.write(write);
+
+		}
+	</script>  
 <body>
 
 <div class="container-fluid">
@@ -50,8 +58,8 @@
       <ul class="nav nav-pills nav-stacked nav-tabs leftsidebar">
         <li class="nav-item active"><a href="#section1">Import</a></li>
         <li class="nav-item "><a href="#section2">Export</a></li>
-        <li class="nav-item "><a href="#section3">About</a></li>
-        <li class="nav-item "><a href="#section3">Help</a></li>       
+        <li class="nav-item "><a href="#section3" onclick="popup('', 'About', 'Nsight is an analytic tool created to help network administrators efficiently classify network traffic  by allowing the user to import a PCAP of network traffic.')">About</a></li>
+        <li class="nav-item "><a href="#section3"onclick="popup('', 'Help', 'To begin analysis select Import to import a PCAP file. Once the PCAP has been imported select the radio button for the desired analytic type.')">Help</a></li>     
       </ul><br>
       <div class="container-fluid center-block imageContainer">    
         <img class="center-block" src="images/Nsight-Logo.png"/>
