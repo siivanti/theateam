@@ -56,7 +56,14 @@
   <div class="row">
     <div class="col-sm-2 sidenav">     
       <ul class="nav nav-pills nav-stacked nav-tabs leftsidebar">
-        <li class="nav-item active"><a href="#section1">Import</a></li>
+	      
+        <li class="nav-item active"><a href="#section1" id="fileupload">Import</a></li>
+	      
+          <form enctype="multipart/form-data" name="myform" id="myform" method="post">
+            <input type="file" id="my_file" name="filename" style="display: none;" />
+            <input type="submit" value="Submit" style="display: none;" />
+          </form>
+	      
         <li class="nav-item "><a href="#section2">Export</a></li>
         <li class="nav-item "><a href="#section3" onclick="popup('', 'About', 'Nsight is an analytic tool created to help network administrators efficiently classify network traffic  by allowing the user to import a PCAP of network traffic.')">About</a></li>
         <li class="nav-item "><a href="#section3"onclick="popup('', 'Help', 'To begin analysis select Import to import a PCAP file. Once the PCAP has been imported select the radio button for the desired analytic type.')">Help</a></li>     
