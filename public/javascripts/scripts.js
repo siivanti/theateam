@@ -36,7 +36,7 @@ $(document).ready(function(){
                 alert("Upload completed");
             },
             error: function(e) {
-                alert("error " + e.message);
+                alert("HTTP ERR_CONNECTION_REFUSED");
             },
             // Form data
             data: formData,
