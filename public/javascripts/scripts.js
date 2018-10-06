@@ -27,7 +27,7 @@ $(document).ready(function(){
     formData.append("file", file);
     console.log(formData.get("file"));
     $.ajax({
-      url: "http://127.0.0.1:3001",
+      url: "http://127.0.0.1:3001/session/",
       //Ajax events
       success: function(e) {
         alert("Upload completed");
