@@ -26,22 +26,29 @@ $(document).ready(function(){
     var file = $("input[type=file]").get(0).files[0];
     formData.append("file", file);
     console.log(formData.get("file"));
-    $.ajax({
-      url: "http://127.0.0.1:3001/session/",
-      //Ajax events
-      success: function(e) {
-        alert("Upload completed");
-      },
-      error: function(e) {
-        alert("error " + e.message);
-      },
-      // Form data
-      data: formData,
-      type: "POST",
-      //Options to tell jQuery not to process data or worry about content-type.
-      cache: false,
-      contentType: false,
-      processData: false
-    });
+	console.log(file.name);
+	var allowed = /(.*\.pcap|.*\.pcapng)/;
+	if (file.name.match(allowed)){
+        $.ajax({
+            url: "http://127.0.0.1:3001/session/",
+            //Ajax events
+            success: function(e) {
+                alert("Upload completed");
+            },
+            error: function(e) {
+                alert("error " + e.message);
+            },
+            // Form data
+            data: formData,
+            type: "POST",
+            //Options to tell jQuery not to process data or worry about content-type.
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+    }else{
+		alert('HTTP 400: Bad Request');
+		return false;
+	};
   };
 });
