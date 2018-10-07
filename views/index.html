@@ -11,43 +11,11 @@
   <script src="/javascripts/scripts.js"></script>
 </head>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load("current", {packages:["corechart"]});
-      google.charts.setOnLoadCallback(drawChart);
-      function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-          ['Task', 'Hours per Day'],
-          ['Work',     11],
-          ['Eat',      2],
-          ['Commute',  2],
-          ['Watch TV', 2],
-          ['Sleep',    7]
-        ]);
-        
-        var options = {   
-            
-            titleTextStyle: {color: '#2c4f6d', fontSize: 22, bold: true},
-            colors:['#3b6890','#4476a3', '#4b82b3', '#528cc1','#5896ce', '#6fa3d8','#8fb4de','#a6c1e3','#bbcfe9','#cedbee'],
-            chartArea:{left:50,top:50,width:'90%',height:'80%'},
-            backgroundColor: '#e5e5e5',
-            title: 'Relative Distribution of Active Ports',
-            pieHole: 0.4,
-            pieSliceTextStyle: {
-            color: 'white'
-          },
-          
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-        chart.draw(data, options);
-      }
-    </script>
-	<script>
+    <script>
 		function popup(url, tag, write){
 			popupWindow=window.open(url, tag, 'height=350,width=350,left=100,top=100,resizable=yes');
 			let title = "<title>Nsight</title>";
 			popupWindow.document.write(title + write);
-
 		}
 	</script>  
 <body>
@@ -88,37 +56,36 @@
             <h3 class="text-center radiotitle">SELECT A VISUALIZATION</h3><br>
             <div class="radiobox">
               <div class="radio ">
-                  <label><input class="radioitem" type="radio" name="optradio" checked> Relative Distribution of Active Ports</label>          
+                  <label><input class="radioitem portdist" type="radio" name="optradio" checked> Relative Distribution of Active Ports</label>          
               </div>
                 <div class="radio">
-                  <label><input class="radioitem" type="radio" name="optradio" checked> IP-based Activity Tracker</label>          
+                  <label><input class="radioitem ipdist" type="radio" name="optradio" > Relative Distribution of Destination IPs</label>          
               </div>
                 <div class="radio">
-                  <label><input class="radioitem" type="radio" name="optradio" checked> IP-to-Port Correlation</label>          
+                  <label><input class="radioitem" type="radio" name="optradio" > IP-to-Port Correlation</label>          
               </div>
             </div>
-        </div>               
+        </div>            
 
-      <br><br>  
-        
-      </div>
-     
+      <br><br>        
+      </div>     
         <div class="container col-sm-10 footer">
-           <ul class="list-inline text-center">
-                <li class="list-inline-item"><h4>Entry Number</h4></li>
-                <li class="list-inline-item"><h4>Request Timestamp</h4></li>
-               <li class="list-inline-item"><h4>Request IP:Port</h4><li>
-                    <li class="list-inline-item"><h4>Response IP:Port</h4></li>
-                <li class="list-inline-item"><h4>Response Hostname</h4></li>
-            
-            </ul>
-        </div>
-                  
-    </div>
-  
+
+            <table class="table text-center myTable">
+                <thead>
+                  <tr>
+                    <th scope="col">Entry Number</th>
+                    <th scope="col">Request Timestamp</th>
+                    <th scope="col">Request IP:Port</th>
+                    <th scope="col">Response IP:Port</th>
+                    <th scope="col">Protocol</th>
+                  </tr>
+                </thead>
+                <tbody>                 
+                </tbody>
+              </table>          
+        </div>                  
+    </div>  
 </div>
-
-
-
 </body>
 </html>
