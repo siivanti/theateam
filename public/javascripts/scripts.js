@@ -21,7 +21,7 @@ $(document).ready(function(){
         color: 'white'
       }
     }
-   /* setTimeout(function(){  // set mock data so graph will display on first load
+   /*setTimeout(function(){  // set mock data so graph will display on first load
         drawChart(mockData);*/
     },500) 
     var time = new Date().getTime();//UTC    
