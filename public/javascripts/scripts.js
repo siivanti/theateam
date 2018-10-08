@@ -22,8 +22,8 @@ $(document).ready(function(){
       }
     }
    /*setTimeout(function(){  // set mock data so graph will display on first load
-        drawChart(mockData);*/
-    },500) 
+        drawChart(mockData);
+    },500) */
     var time = new Date().getTime();//UTC    
     var date = new Date(time);//Pass back in UTC
     //display time
