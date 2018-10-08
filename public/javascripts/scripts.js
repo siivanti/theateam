@@ -1,14 +1,14 @@
 $(document).ready(function(){
     let packetData = [];
     google.charts.load("current", {packages:["corechart"]});
-    let mockData =([
+    /*let mockData =([
         ['Task', 'Hours per Day'],
         ['Work',     11],
         ['Eat',      2],
         ['Commute',  2],
         ['Watch TV', 2],
         ['Sleep',    7]
-      ]);        
+      ]); */       
     var options = {   
             
         titleTextStyle: {color: '#2c4f6d', fontSize: 22, bold: true},
@@ -21,8 +21,8 @@ $(document).ready(function(){
         color: 'white'
       }
     }
-    setTimeout(function(){  // set mock data so graph will display on first load
-        drawChart(mockData);
+   /* setTimeout(function(){  // set mock data so graph will display on first load
+        drawChart(mockData);*/
     },500) 
     var time = new Date().getTime();//UTC    
     var date = new Date(time);//Pass back in UTC
